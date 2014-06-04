@@ -140,6 +140,43 @@ If you do not want to host this your self you can use our Marketplace.
             hallo
         }
 
+## adapters [/adapter]
+
+### Get Ask Fast adapters [GET]
+
++ response 200 (aplivations/json)
+
+        {
+            configId: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            dialogId: null,
+            initialAgentURL: "",
+            publicKey: "",
+            adapterType: "ussd",
+            preferred_language: "nl",
+            address: "",
+            myAddress: "",
+            keyword: null,
+            status: "",
+            xsiURL: "",
+            xsiUser: "",
+            xsiPasswd: "",
+            xsiSubscription: "xxxxxxxxxx",
+            accessToken: "xxxxxxxxx",
+            accessTokenSecret: "xxxxxxxxxxx",
+            anonymous: false,
+            owner: null,
+            accounts: [
+                "xxxxxxxxxxxxxxxxxxxx"
+            ],
+            properties: {
+                ADAPTER_CREATION_TIME: 1400167116197
+            }
+        }
+
+
+
+
+
 
 ## subacounts [/subacounts/{subacountid}]
 
@@ -218,41 +255,6 @@ Post value:
             hallo
         }
   
-## adapters [/adapter]
-
-### Get Ask Fast adapters [GET]
-
-+ response 200 (aplivations/json)
-
-        {
-            configId: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-            dialogId: null,
-            initialAgentURL: "",
-            publicKey: "",
-            adapterType: "ussd",
-            preferred_language: "nl",
-            address: "",
-            myAddress: "",
-            keyword: null,
-            status: "",
-            xsiURL: "",
-            xsiUser: "",
-            xsiPasswd: "",
-            xsiSubscription: "xxxxxxxxxx",
-            accessToken: "xxxxxxxxx",
-            accessTokenSecret: "xxxxxxxxxxx",
-            anonymous: false,
-            owner: null,
-            accounts: [
-                "xxxxxxxxxxxxxxxxxxxx"
-            ],
-            properties: {
-                ADAPTER_CREATION_TIME: 1400167116197
-            }
-        }
-
-
-
 
 
 
