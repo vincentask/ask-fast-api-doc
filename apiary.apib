@@ -158,7 +158,7 @@ If you do not want to host this your self you can use our Marketplace.
 
 ## autorizes app [/authorized_app]
 
-### make app [POST]
+
 
 ### get authorized apps [GET]
 
@@ -167,8 +167,31 @@ If you do not want to host this your self you can use our Marketplace.
         {
             hallo
         }
+        
+        
+## app [/app]
+
+### make app [POST] 
+
+Aplication type: aplication/json
+
+Post value:
 
 
++ response 200 (aplication/json)
+
+        {
+            hallo
+        }
+
+## app [/app/{appid}]
+
+### get app [GET]
+
++ Parameters
+    + appid (requierd, String , `xxxxx`)... String `appid` of the app.
+
+  
 ## adapters [/adapter]
 
 ### Get Ask Fast adapters [GET]
