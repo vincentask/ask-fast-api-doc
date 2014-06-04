@@ -1,0 +1,229 @@
+FORMAT: 1A
+HOST: http://sandbox.aks-fast.com
+
+# askfast
+Ask Fast offers a API framework can create dialogs via every media type e.g sms, xmpp, email, twitter, voice and ussd. 
+
+The Ask Fast API enables you to send your message to your contacts, and receive their answer fast and easy. To get you message to the end user you can choose your favorite way of communicating, currently we support: sms, xmpp, email, twitter and voice. The API use web standard formats like jsons to make developingg as easy as posible. 
+
+The API is split up two parts. 
+
+The first part is the pure Ask Fast API, this allows you (the developer) to host you own questions and answers. This requires your own server and server sided  code. 
+
+The second makes use of the Ask fast Marketplace. Here we do everything for you, so you do not have to worry about the server side. You can focus on what you do best creating great apps. Make your choose and get started!
+
+
+
+# group Introduction
+
+
+## libraries
+
+Library support is currently restricted to Java and PHP, if you have build your own library please let us know at: api@asf-fast.com. You can download the libraries from here, the manuals are in this document:
+
+- Java library
+- PHP library
+
+## authentication
+
+For authentication the Ask Fast API uses a unique token per application, or basic authentication per request. To make sure the connection is save all calls have to be via a HTTPS connections regualar HTTP will fail.
+
+## error handling
+
+Ask Fast Api uses regular HTTP response codes to indicate suesses or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an errer form the user side, this could be an invalid request or a not authorised (401).
+
+Overview of HTTP response codes:
+
+- 200 → everything whent smoothly.
+- 400 → Bad request maybe a parameter is missing?
+- 401 → Not authorised, the autosisation faild.
+- 404 → Request not found.
+- 5xx → internal server error, we try to make the error logs easy to read for you.
+
+
+## dates
+
+All dates are standard UNIX (epoch) coded. This represents the seconds passed since 01-01-1970. Some examples:
+
+- 1396350000 - 12:00:00 01-01-2014
+- 946728000   - 12:00:00 01-01-2000
+
+
+## Pagination
+
+At the moment the pagination limitations is a 1000 responses per call. If you wish to go back even further you can change the date attribute, to fetch the results for a certain period.  
+
+## Rate limiting
+The Ask Fast Api uses a fair use policy, when you do not abuse the system you do not have a rate limiting
+
+
+
+#group Ask Fast API - Getting started
+
+You can use the Ask Fast API, to directly talk to our servers to send messages. To send a questions this questions have to be hosted on your own server. This can be an easy mysql database or any other form of you liking.
+If you do not want to host this your self you can use our Marketplace.
+
+## login [/login?username={username}&password={password}]
+### login to Ask Fast get [GET]
+
++ Parameters
+    + username (required, String , `vincent`)... String `username` of the user.
+    + password (required, String , `xxxxxxx`) ... String `password` of the user.
+
++ response 200 (aplication/json)
+    
+        {
+          "X-session_id": "xxxxxxxxxxxxxxxxxxxx"
+        }
+
++ response 400 ()
+
+
+
+### login to Ask Fast post [POST]
+
+
+
++ response 200 (aplication/json)
+
+        {
+            X-Session-Id : "xxxxxxxxxxxxxxxxxx"
+        }
+
+
+## logout [/logout]
+### logout of Ask Fast [GET]
+
++ response 200 (apilication/json)
+
+        {
+            done
+        }
+
+
+## acount info [/info]
+### get acount info [GET]
+
++ response 200 (aplication/json)
+
+        {
+            hallo
+        }
+        
+
+## get Keys [/key]
+### get key [GET]
+
++ response 200 (aplication/json)
+
+        {
+            hallo
+        }
+
+### get Key [POST]
+
++ response 200 (aplication/json)
+
+        {
+            hallo
+        }
+        
+## delete key [/key/{token}]
+### delete key [DELETE]
+
++ Parameters
+    + token (required, String , `xxxxx`)... String `token` of the key.
+
++ response 200 (aplication/json)
+
+        {
+            hallo
+        }
+
+
+
+
+## adapters [/adapter]
+To send message you need to specify an adapter. 
+
+
+
+
+
+
+#group adapters
+
+## Ask Fast get adapters [/rest/adapters]
+### Get Ask Fast adapters [GET]
+
++ response 200 (aplivations/json)
+
+        {
+            configId: "2f601640-dc44-11e3-964c-180373bdbc7c",
+            dialogId: null,
+            initialAgentURL: "",
+            publicKey: "",
+            adapterType: "ussd",
+            preferred_language: "nl",
+            address: "",
+            myAddress: "",
+            keyword: null,
+            status: "",
+            xsiURL: "",
+            xsiUser: "",
+            xsiPasswd: "",
+            xsiSubscription: "5304ea94df428",
+            accessToken: "ASKFastBV_h_ugw0",
+            accessTokenSecret: "qMA3gBY5",
+            anonymous: false,
+            owner: null,
+            accounts: [
+                "7e80b739-7adb-4177-bb25-c373829b39f0"
+            ],
+            properties: {
+                ADAPTER_CREATION_TIME: 1400167116197
+            }
+        }
+
+
+
+#group not interesting
+
+## Notes Collection [/notes]
+### List all Notes [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+### Create a Note [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Note [/notes/{id}]
+A single Note object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204
