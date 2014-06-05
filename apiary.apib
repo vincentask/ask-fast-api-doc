@@ -96,32 +96,43 @@ If you want to make a call and use Text To Speech (TTS) you can use the followin
 You can use the Ask Fast API, to directly talk to our servers to send messages. To send a questions this questions have to be hosted on your own server. This can be an easy mysql database or any other form of you liking.
 If you do not want to host this your self you can use our Marketplace.
 
-## login [/login?username={username}&password={password}]
-### login to Ask Fast get [GET]
+## get bearer token [/keyserver/token]
+### login to Ask Fast get [POST]
 
-+ Parameters
-    + username (required, String , `vincent`)... String `username` of the user.
-    + password (required, String , `xxxxxxx`) ... String `password` of the user.
+|field|value|description|
+|----|----|----|
+|`client_id`|you client id| can be found in the developer page
+|`grant_type`|resfresh_token|always refresh token|
+|`refresh_token`|xxxxxxxxxxxxxxxxxxxxxxxx|can be found at the developer page|
+|`client_secret`|none|always none|
 
-+ response 200 (aplication/json)
++ headers
+
+        client_id:xxxxxxxxxxxxxxxxxxxxxxx
+        grant_type:resfresh_token
+        refresh_token:xxxxxxxxxxxxxxxxxxxxxxxx
+        client_secret:none
+
++ response 200 (application/json)
     
         {
-          "X-session_id": "xxxxxxxxxxxxxxxxxxxx"
+            "expires_in": 3600,
+            "refresh_token": "378bb4fd0ce77a7385515765aa39921f",
+            "access_token": "890c2eef9b41be506bdf0634f40991a8"
         }
 
-+ response 400 ()
-
-
-
-### login to Ask Fast post [POST]
-
-
-
-+ response 200 (aplication/json)
++ response 400 (application/json)
 
         {
-            X-Session-Id : "xxxxxxxxxxxxxxxxxx"
+            "error":"xxxxxxx",
+            "error_description":"xxxxxxxxxxxxxx"
         }
+
+
+
+
+
+
 
 
 ## logout [/logout]
