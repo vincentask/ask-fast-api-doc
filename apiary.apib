@@ -157,9 +157,15 @@ If you do not want to host this your self you can use our Marketplace.
 + response 200 (aplication/json)
 
         {
-            hallo
+            id: "fb8e16cc-c094-4341-8135-8d3796632ea2"
+            userName: "exceltest"
+            password: "779f334a13f4616cdd08d5bd7dc41717"
+            name: "Excel+Test"
+            phoneNumber: null
+            email: null
+            creationTime: 1398852668448
+            status: "ACTIVE"
         }
-        
 
 ## get Keys [/key]
 ### get key [GET]
@@ -167,16 +173,10 @@ If you do not want to host this your self you can use our Marketplace.
 + response 200 (aplication/json)
 
         {
-            hallo
+            accountId: "fb8e16cc-c094-4341-8135-8d3796632ea2"
+            refreshToken: "378bb4fd0ce77a7385515765aa39921f"
         }
 
-### get Key [POST]
-
-+ response 200 (aplication/json)
-
-        {
-            hallo
-        }
         
 ## delete key [/key/{token}]
 ### delete key [DELETE]
@@ -239,7 +239,7 @@ To send a message you need to specify the adapter, this messages retrieves all t
 
 
 
-### update inbound url [PUT]
+### update inbound agent url [PUT]
 
 #### body
 
