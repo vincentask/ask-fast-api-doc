@@ -196,6 +196,13 @@ If you do not want to host this your self you can use our Marketplace.
 
 To send a message you need to specify the adapter, this messages retrieves all the adapters
 
+## header fields
+
+|field|value|
+|----|----|
+|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
+|`Content-Type`|`application/json`|
+
 + headers
   
         Content-Type: application/json
@@ -316,7 +323,9 @@ Post value:
 
 #group send message
 
-a Dialog-Scenario consists of Questions. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions. Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
+a Dialog-Scenario consists of Questions. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. 
+In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions. 
+Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
 The general format of a Question JSON looks like:
 
             {
@@ -365,6 +374,43 @@ The general format of a Question JSON looks like:
 |`TSS_SPEED`                |(Specific to phonecall) Defines the speed at which the TTS is spoken by the TTS engine. Default value: “0”. Range: [-10, 10] where -10 is the slowest and 10|
 
 
+## send message [/dialoghandler/rpc]
+
+### test message with map [POST]
+
+## header fields
+
+|field|value|
+|----|----|
+|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
+|`Content-Type`|`application/json`|
+
++ headers
+  
+        Content-Type: application/json
+        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+
++ request
+
+        {
+            "method": "outboundCallWithMap",
+            "params": {
+                "adapterID": "<adapterId>",
+                "addressMap": {
+                    "<address1>": "Alice"
+                },
+                "url": "<URL to fetch the Question from>",
+                "accountID": "<accountID>",
+                "bearerToken": "<access token by the GET Access Token call>",
+                "senderName": "<sender Name>",
+                "subject": "<Subject>"
+            }
+        }
+
+
++ response 200 
+
+    hallo
 
 
 
@@ -377,9 +423,4 @@ The general format of a Question JSON looks like:
 
 
 
-
-
-
-
-
-
+# group incomming messages
