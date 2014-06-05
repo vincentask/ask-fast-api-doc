@@ -99,7 +99,7 @@ If you do not want to host this your self you can use our Marketplace.
 ## get bearer token [/keyserver/token]
 ### login to Ask Fast get [POST]
 
-#### header fields
+#### x-www-form-urlencoded fields
 
 |field|value|description|
 |----|----|----|
@@ -108,7 +108,8 @@ If you do not want to host this your self you can use our Marketplace.
 |`refresh_token`|your client id|can be found at the developer page|
 |`client_secret`|none|always none|
 
-+ headers
+
++ request
 
             client_id:xxxxxxxxxxxxxxxxxxxxxxx
             grant_type:resfresh_token
