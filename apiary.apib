@@ -378,6 +378,24 @@ The general format of a Question JSON looks like:
 
 ### test message with map [POST]
 
+Boddy content:
+
+        {
+            "method": "outboundCallWithMap",
+            "params": {
+                "adapterID": "<adapterId>",
+                "addressMap": {
+                    "<address1>": "Alice"
+                },
+                "url": "<URL to fetch the Question from>",
+                "accountID": "<accountID>",
+                "bearerToken": "<access token by the GET Access Token call>",
+                "senderName": "<sender Name>",
+                "subject": "<Subject>"
+            }
+        }
+
+
 ## header fields
 
 |field|value|
@@ -410,7 +428,7 @@ The general format of a Question JSON looks like:
 
 + response 200 
 
-    hallo
+        hallo
 
 
 
