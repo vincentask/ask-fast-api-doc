@@ -99,15 +99,25 @@ If you do not want to host this your self you can use our Marketplace.
 ## get bearer token [/keyserver/token]
 ### login to Ask Fast get [POST]
 
+#### header fields
+
+|field|value|
+|----|----|
+|`Content-Type`|`application/x-www-form-urlencoded`|
+
+
 #### x-www-form-urlencoded fields
 
 |field|value|description|
 |----|----|----|
-|`client_id`|your client id| can be found in the developer page
+|`client_id`|your client id| can be found in the developer page|
 |`grant_type`|resfresh_token|always refresh token|
 |`refresh_token`|your client id|can be found at the developer page|
 |`client_secret`|none|always none|
 
++ header 
+
+            Content-Type:application/x-www-form-urlencoded
 
 + request
 
