@@ -378,7 +378,7 @@ The general format of a Question JSON looks like:
 
 ### test message with map [POST]
 
-Boddy content:
+#####body content:
 
         {
             "method": "outboundCallWithMap",
@@ -431,6 +431,26 @@ Boddy content:
         hallo
 
 ### test inbound message [POST]
+
+#### body
+
+        {
+            "id": 1,
+            "method": "changeAgent",
+            "params": {
+                "accountID": "<accountID>",
+                "bearerToken": "<access token by the GET Access Token call>",
+                "adapterID": "<adapterID>",
+                "url": "http://myagenturl.com"
+            }
+        }
+
+## header fields
+
+|field|value|
+|----|----|
+|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
+|`Content-Type`|`application/json`|
 
 + headers
   
