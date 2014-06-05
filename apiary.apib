@@ -432,6 +432,25 @@ Boddy content:
 
 ### test inbound message [POST]
 
++ headers
+  
+        Content-Type: application/json
+        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+
++ request
+
+        {
+            "id": 1,
+            "method": "changeAgent",
+            "params": {
+                "accountID": "<accountID>",
+                "bearerToken": "<access token by the GET Access Token call>",
+                "adapterID": "<adapterID>",
+                "url": "http://myagenturl.com"
+            }
+        }
+
+
 + response 200 
 
         hallo
