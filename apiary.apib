@@ -320,6 +320,39 @@ Post value:
             hallo
         }
 
+### update inbound url [PUT]
+
+#### body
+
+        {
+            initialAgentURL:<initial agent URL if any, for inbound scenarios>
+            anonymous:false
+        }
+
+
+#### header fields
+
+|field|value|
+|----|----|
+|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
+|`Content-Type`|`application/json`|
+
++ headers
+  
+        Content-Type: application/json
+        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+
+
++ resposne 200
+
+        {
+            configId: "<uniqueadapterid>",
+            adapterType: "<adapterType>",
+            address: "<adapterAddress>",
+            keyword: null,
+            initialAgentURL: <initialagentURLifany,forinboundscenarios>,
+            anonymous: false
+        }
 
 #group send message
 
@@ -378,7 +411,7 @@ The general format of a Question JSON looks like:
 
 ### test message with map [POST]
 
-###### body content:
+##### body content:
 
         {
             "method": "outboundCallWithMap",
@@ -445,7 +478,7 @@ The general format of a Question JSON looks like:
             }
         }
 
-## header fields
+#### header fields
 
 |field|value|
 |----|----|
