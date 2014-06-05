@@ -97,7 +97,11 @@ You can use the Ask Fast API, to directly talk to our servers to send messages. 
 If you do not want to host this your self you can use our Marketplace.
 
 ## login [/keyserver/token]
-### login to Ask Fast get [POST]
+### login to Ask Fast [POST]
+
+Ask fast api does not use a login the servers expects a authorization token for every request. 
+This token can be fethced with this request.
+
 
 Set these fields manualy when trying the example on the right
 
@@ -141,18 +145,6 @@ Set these fields manualy when trying the example on the right
             "error":"xxxxxxx",
             "error_description":"xxxxxxxxxxxxxx"
         }
-
-
-
-## logout [/logout]
-### logout of Ask Fast [GET]
-
-+ response 200 (apilication/json)
-
-        {
-            done
-        }
-
 
 ## acount info [/info]
 ### get acount info [GET]
