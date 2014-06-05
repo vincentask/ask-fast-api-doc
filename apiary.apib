@@ -239,7 +239,39 @@ To send a message you need to specify the adapter, this messages retrieves all t
 
 
 
+### update inbound url [PUT]
 
+#### body
+
+        {
+            initialAgentURL:<initial agent URL if any, for inbound scenarios>
+            anonymous:false
+        }
+
+
+#### header fields
+
+|field|value|
+|----|----|
+|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
+|`Content-Type`|`application/json`|
+
++ headers
+  
+        Content-Type: application/json
+        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+
+
++ response 200
+
+        {
+            configId: "<uniqueadapterid>",
+            adapterType: "<adapterType>",
+            address: "<adapterAddress>",
+            keyword: null,
+            initialAgentURL: <initialagentURLifany,forinboundscenarios>,
+            anonymous: false
+        }
 
 
 ## subacounts [/subacounts/{subacountid}]
@@ -320,39 +352,6 @@ Post value:
             hallo
         }
 
-### update inbound url [PUT]
-
-#### body
-
-        {
-            initialAgentURL:<initial agent URL if any, for inbound scenarios>
-            anonymous:false
-        }
-
-
-#### header fields
-
-|field|value|
-|----|----|
-|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
-|`Content-Type`|`application/json`|
-
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
-
-
-+ resposne 200
-
-        {
-            configId: "<uniqueadapterid>",
-            adapterType: "<adapterType>",
-            address: "<adapterAddress>",
-            keyword: null,
-            initialAgentURL: <initialagentURLifany,forinboundscenarios>,
-            anonymous: false
-        }
 
 #group send message
 
