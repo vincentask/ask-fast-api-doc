@@ -316,6 +316,37 @@ Post value:
 
 #group send message
 
+a Dialog-Scenario consists of Questions. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions. Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
+The general format of a Question JSON looks like:
+
+            {
+                "question_id":<some_id>,
+                "question_text":"<text or url>",
+                "type":"[ open | closed | comment | referral ]",
+                "url":"<referral url>",
+                "answers":[
+                    { 
+                        "answer_id":<some_id>,
+                        "answer_text":"<text or url>",
+                        "callback":"<url>"
+                    }
+                ],
+                "event_callbacks":[
+                    {
+                        "event":"[answered|timeout|hangup|exception]",
+                        "callback":"<url>"
+                    }
+                ],
+                "media_properties": [
+                    {
+                        "medium": "[BROADSOFT | GTALK | SMS]",
+                        "properties": 
+                    {
+                        "<MediumPropertyKey>": "<PropertyValue>"
+                    }
+                }
+                ]
+            }
 
 
 
