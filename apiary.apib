@@ -281,15 +281,19 @@ To send a message you need to specify the adapter, this messages retrieves all t
 |`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
 |`Content-Type`|`application/json`|
 
-#### body
+#### post body
 
         {
             initialAgentURL:<initial agent URL if any, for inbound scenarios>
             anonymous:false
         }
 
+#### body
 
-
+        {
+            initialAgentURL:<initial agent URL if any, for inbound scenarios>
+            anonymous:false
+        }
 
 + headers
   
@@ -358,16 +362,23 @@ The general format of a Question JSON looks like:
                     {
                         "medium": "[BROADSOFT | GTALK | SMS]",
                         "properties": 
-                    {
-                        "<MediumPropertyKey>": "<PropertyValue>"
-                    }
+                        {
+                           "<MediumPropertyKey>": "<PropertyValue>"
+                        }
                 }
                 ]
             }
             
 #### parameter specification:
 
-
+| name          | type      | description  |
+| ------------- |:---------:| -----|
+| `question_id`    | string    | can be any chosen id|
+|`type`|string|open anwser can be anything; closed e.g YES or NO; comment ; refferal;|
+|`url`|string|url of the type??|
+|`answer_id`|string| some chosen id|
+|`callback`|string| this url will be call when a person awnsers, here the next question will be called|
+|||
 
 #### optional propperties defined in the MediumPropertyKey key
 
