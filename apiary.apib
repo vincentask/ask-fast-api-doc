@@ -302,16 +302,19 @@ Use of this library frees the developer from knowing how the Question should be 
 
 The flow is as follows:
 
-1. set up a dialog format and a initial agent url
+1. set up a dialog format and a callback url
 
 2. initiate the dialog see `initiate dialog`
 
-3. rather respone at your specified agent url
+3. user responds
 
+4. callback url is called with the anwsner
 
+5. process the awnser
 
+6. respond with the next question
 
-
+7. start again from point 3
 
 
 The general format of a Question JSON looks like:
