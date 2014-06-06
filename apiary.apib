@@ -366,9 +366,17 @@ The general format of a Question JSON looks like:
 
 ### initiate dialog [POST]
 
-+ header
-    
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#### header fields
+
+|field|value|
+|----|----|
+|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
+|`Content-Type`|`application/json`|
+
++ headers
+  
+        Content-Type: application/json
+        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
 
 + request 
 
@@ -387,6 +395,8 @@ The general format of a Question JSON looks like:
         }
 
 ## test send message [/dialoghandler/rpc]
+
+For testing purposes it is postible to send test messages via this method.
 
 ### test message with map [POST]
 
