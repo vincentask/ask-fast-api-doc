@@ -299,9 +299,36 @@ To send a message you need to specify the adapter, this messages retrieves all t
 A diaglog has to be hosted in the spesific format on your server. You can create these json dialogs yourself or use out api. 
 The flow is as follows:
 
-1. set up a dialog format and a call back url
+1. set up a dialog format and a initial agent url
+
+2. initiate the dialog see `initiate` dialog
+
+3. rather respone at your specified agent url
 
 
+## initiate dialog [/dialog]
+
+### initiate dialog [POST]
+
++ header
+    
+        Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
++ request 
+
+        {
+            "name":"My First Dialog", 
+            "url" : "http://test.me" 
+        }
+
++ respone 200
+
+        {
+            id: "649ec2a1-cab4-4eab-bb38-7aa3c9ad6e9f"
+            name: "My First Dialog"
+            url: http://test.me
+            owner: "fb8e16cc-c094-4341-8135-8d3796632ea2"
+        }
 
 #group send message
 
