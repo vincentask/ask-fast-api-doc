@@ -25,7 +25,7 @@ Api documentation for each labrary can be found on the github and bellow
 
 ## authentication
 
-For authentication the Ask Fast API uses a unique token this token can be requierd with an oath request as descriped in the login section. To make sure the connection is save all calls have to be via a HTTPS connections regualar HTTP will fail.
+For authentication the Ask Fast API uses a unique token this token can be requierd with an oAuth request as descriped in the login section. To make sure the connection is save all calls have to be via a HTTPS connections regualar HTTP will fail.
 
 ## error handling
 
@@ -284,12 +284,6 @@ To send a message you need to specify the adapter, this messages retrieves all t
             anonymous:false
         }
 
-#### body
-
-        {
-            initialAgentURL:<initial agent URL if any, for inbound scenarios>
-            anonymous:false
-        }
 
 + headers
   
@@ -336,6 +330,8 @@ The flow is as follows:
 
 The general format of a Question JSON looks like:
 
+```json
+
             {
                 "question_id":<some_id>,
                 "question_text":"<text or url>",
@@ -364,7 +360,8 @@ The general format of a Question JSON looks like:
                 }
                 ]
             }
-            
+           
+``` 
 #### parameter specification:
 
 | name          | type      | description  |
