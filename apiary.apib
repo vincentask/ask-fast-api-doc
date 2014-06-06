@@ -296,7 +296,10 @@ To send a message you need to specify the adapter, this messages retrieves all t
 
 #group dialog senario
 
-A diaglog has to be hosted in the spesific format on your server. You can create these json dialogs yourself or use out api. 
+a Dialog-Scenario consists of Questions. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. 
+In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions. 
+Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
+
 The flow is as follows:
 
 1. set up a dialog format and a initial agent url
@@ -306,35 +309,11 @@ The flow is as follows:
 3. rather respone at your specified agent url
 
 
-## initiate dialog [/dialog]
 
-### initiate dialog [POST]
 
-+ header
-    
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-+ request 
 
-        {
-            "name":"My First Dialog", 
-            "url" : "http://test.me" 
-        }
 
-+ response 200
-
-        {
-            id: "649ec2a1-cab4-4eab-bb38-7aa3c9ad6e9f"
-            name: "My First Dialog"
-            url: http://test.me
-            owner: "fb8e16cc-c094-4341-8135-8d3796632ea2"
-        }
-
-#group send message
-
-a Dialog-Scenario consists of Questions. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. 
-In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions. 
-Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
 The general format of a Question JSON looks like:
 
             {
@@ -382,6 +361,30 @@ The general format of a Question JSON looks like:
 |`DTMF_TERMINATE`           |(Specific to phonecall) Boolean flag to indicate if the call should terminate when a dtmf is pressed. Default value is “true”.|
 |`TSS_SPEED`                |(Specific to phonecall) Defines the speed at which the TTS is spoken by the TTS engine. Default value: “0”. Range: [-10, 10] where -10 is the slowest and 10|
 
+
+## initiate dialog [/dialog]
+
+### initiate dialog [POST]
+
++ header
+    
+        Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
++ request 
+
+        {
+            "name":"My First Dialog", 
+            "url" : "http://test.me" 
+        }
+
++ response 200
+
+        {
+            id: "649ec2a1-cab4-4eab-bb38-7aa3c9ad6e9f"
+            name: "My First Dialog"
+            url: http://test.me
+            owner: "fb8e16cc-c094-4341-8135-8d3796632ea2"
+        }
 
 ## test send message [/dialoghandler/rpc]
 
