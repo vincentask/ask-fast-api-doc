@@ -467,23 +467,23 @@ This a library to make it easy to build and send  dialog senario's.
 Here is a short description of basic fuctions. An example can be found in the GitHub.
 
 ##### The following are the methods used in general to create a dialog of questions and answers. 
-- ask(“Question text”, nextURL)
+- `ask(“Question text”, nextURL)`
 
     QuestionType: OPEN
 
     Method used to ask a question. By default this function creates an OPEN question i.e open to user input. 
 
-- askByVoice(“Question text”, nextURL)
+- `askByVoice(“Question text”, nextURL)`
 
     QuestionType: OPENAUDIO
     Method used to ask a open audio question. 
     
-- redirect(“to”, “redirectText”, “next”)
+- `redirect(“to”, “redirectText”, “next”)`
 
     QuestionType: REFERRAL
     Method used to ask a open audio question. 
 
-- addAnswer(“Answer text”, “nextURL”)
+- `addAnswer(“Answer text”, “nextURL”)`
 
     QuestionType: CLOSED
     
@@ -507,37 +507,37 @@ Any outBound communication request works on the basis of oAuth 2.0 standard. For
 1. The instance variable of AskFast must be created with accountID and refreshToken. E.g: AskFast askfast = new AskFast(<url>, <accountID>, <refreshToken>, <params>);
 2. Call the obtainAccessToken() method. This method will obtain the AccessToken from our keyserver.
     
-- outBoundCall( “fromAddress”, “toAddress”, “url” )
+- `outBoundCall( “fromAddress”, “toAddress”, “url” )`
 
     Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
     
     AskFast(String url, String accountID, String refreshToken)
  
-- outBoundCall( “fromAddress”, “senderName”, “toAddress”, “url” ) 
+- `outBoundCall( “fromAddress”, “senderName”, “toAddress”, “url” )` 
 
     Performs a similar outbound call like #7, but for all text based outBoundCalls (E.g. Email, SMS, XMPP etc) will identify the sender by the senderName. 
 
-- outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” ) 
+- `outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” )` 
     
     This initiates a broadcast call to all the addresses in the Collection.
     
-- outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” ) 
+- `outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” )` 
 
     This initiates a broadcast call to all the addresses in the Collection.
     
-- `outBoundCall( “fromAddress”, “senderName”, Map<“toAddress”, 
-
-    fMap<“ccAddress”, “ccName”>, Map<“bccAddress”, “bccName”>, “url” )` 
+- `outBoundCall( “fromAddress”, “senderName”, Map<“toAddress”, fMap<“ccAddress”, “ccName”>, Map<“bccAddress”, “bccName”>, “url” )` 
 
     This is usually used exclusively for email broadcast. Special parameters for ccAddress and bccAddress allows corresponding functionalities. 
     
-- render() or finish()
+- `render()` or `finish()`
 
     Method used to return the question thus formed in a JSON format.
 
 ## To ease outBoundCall requests, make use of the outBoundCall() method in the ASK-Fast API.
-outBoundCall( “adapterID”, “address”, “url” ) throws Exception
-Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
-AskFast(String baseHostURL, String accountID, String refreshToken)
+
+- `outBoundCall( “adapterID”, “address”, “url” ) throws Exception`
+
+    Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
+    `AskFast(String baseHostURL, String accountID, String refreshToken)`
 
 
