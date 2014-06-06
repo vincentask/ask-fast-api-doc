@@ -121,14 +121,16 @@ Set these fields manualy when trying the example on the right
 |`refresh_token`|your client id|can be found at the developer page|
 |`client_secret`|none|always none|
 
-+ header 
-
-            Content-Type:application/x-www-form-urlencoded
-
-+ request (application/x-www-form-urlencoded)
-
-            client_id=xxxxxxxxxxxxxxxxxxxxxxx&grant_type=refresh_token&refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxx&client_secret=none
-            
++ model
+        
+        + header 
+        
+                    Content-Type:application/x-www-form-urlencoded
+        
+        + request (application/x-www-form-urlencoded)
+        
+                    client_id=xxxxxxxxxxxxxxxxxxxxxxx&grant_type=refresh_token&refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxx&client_secret=none
+                    
 
 + response 200 (application/json)
     
@@ -155,14 +157,16 @@ Set these fields manualy when trying the example on the right
 |`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
 |`Content-Type`|`application/json`|
 
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
-
-+ request
++ model
         
+        + headers
+          
+                Content-Type: application/json
+                Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
         
+        + request
+                
+                    
 
 + response 200 (aplication/json)
 
@@ -187,14 +191,16 @@ Set these fields manualy when trying the example on the right
 |`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
 |`Content-Type`|`application/json`|
 
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
++ model
 
-+ request
-        
+        + headers
           
+                Content-Type: application/json
+                Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+        
+        + request
+                
+                  
 
 + response 200 (aplication/json)
 
@@ -229,13 +235,15 @@ To send a message you need to specify the adapter, this messages retrieves all t
 |`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
 |`Content-Type`|`application/json`|
 
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
-
-+ request 
-
++ model
+        
+        + headers
+          
+                Content-Type: application/json
+                Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+        
+        + request 
+        
         
 
 + response 200 (aplivations/json)
@@ -284,16 +292,18 @@ To send a message you need to specify the adapter, this messages retrieves all t
             initialAgentURL:<initial agent URL if any, for inbound scenarios>
             anonymous:false
         }
-
-
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
-
-+ request 
-
++ model
         
+        + headers
+          
+                Content-Type: application/json
+                Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+        
+        + request 
+                    {
+                        initialAgentURL:<initial agent URL if any, for inbound scenarios>
+                        anonymous:false
+                    }
 
 + response 200
 
@@ -364,32 +374,7 @@ The general format of a Question JSON looks like:
            
 ```
 
-```php
 
-        <?php
-        $ch = curl_init();
-        
-        curl_setopt($ch, CURLOPT_URL, "http://private-dd608b-askfast.apiary-proxy.com/dialog");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, FALSE);
-        
-        curl_setopt($ch, CURLOPT_POST, TRUE);
-        
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "{
-          \"name\": \"My First Dialog\",
-          \"url\": \"http://test.me\"
-        }");
-        
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-          "Authorization: Bearer xxxxxxxxxxxxxxxxxxxx",
-          "Content-Type: application/json"
-        ));
-        
-        $response = curl_exec($ch);
-        curl_close($ch);
-        
-        var_dump($response);
-```
 
 #### parameter specification:
 
@@ -437,18 +422,20 @@ The general format of a Question JSON looks like:
             "url" : "http://test.me" 
         }
 
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
-
-+ request 
-
-        {
-            "name":"My First Dialog", 
-            "url" : "http://test.me" 
-        }
-
++ model
+        
+        + headers
+          
+                Content-Type: application/json
+                Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+        
+        + request 
+        
+                {
+                    "name":"My First Dialog", 
+                    "url" : "http://test.me" 
+                }
+        
 + response 200
 
         {
@@ -489,29 +476,29 @@ For testing purposes it is postible to send test messages via this method.
         }
 
 
-
-
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
-
-+ request
-
-        {
-            "method": "outboundCallWithMap",
-            "params": {
-                "adapterID": "<adapterId>",
-                "addressMap": {
-                    "<address1>": "Alice"
-                },
-                "url": "<URL to fetch the Question from>",
-                "accountID": "<accountID>",
-                "bearerToken": "<access token by the GET Access Token call>",
-                "senderName": "<sender Name>",
-                "subject": "<Subject>"
-            }
-        }
++ model
+        
+        + headers
+          
+                Content-Type: application/json
+                Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+        
+        + request
+        
+                {
+                    "method": "outboundCallWithMap",
+                    "params": {
+                        "adapterID": "<adapterId>",
+                        "addressMap": {
+                            "<address1>": "Alice"
+                        },
+                        "url": "<URL to fetch the Question from>",
+                        "accountID": "<accountID>",
+                        "bearerToken": "<access token by the GET Access Token call>",
+                        "senderName": "<sender Name>",
+                        "subject": "<Subject>"
+                    }
+                }
 
 
 + response 200 
@@ -540,26 +527,26 @@ For testing purposes it is postible to send test messages via this method.
             }
         }
 
-
-
-+ headers
-  
-        Content-Type: application/json
-        Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
-
-+ request
-
-        {
-            "id": 1,
-            "method": "changeAgent",
-            "params": {
-                "accountID": "<accountID>",
-                "bearerToken": "<access token by the GET Access Token call>",
-                "adapterID": "<adapterID>",
-                "url": "http://myagenturl.com"
-            }
-        }
-
++ model
+        
+        + headers
+          
+                Content-Type: application/json
+                Authorization: Bearer xxxxxxxxxxxxxxxxxxxx
+        
+        + request
+        
+                {
+                    "id": 1,
+                    "method": "changeAgent",
+                    "params": {
+                        "accountID": "<accountID>",
+                        "bearerToken": "<access token by the GET Access Token call>",
+                        "adapterID": "<adapterID>",
+                        "url": "http://myagenturl.com"
+                    }
+                }
+        
 
 + response 200 
 
