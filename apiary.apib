@@ -511,17 +511,27 @@ Any outBound communication request works on the basis of oAuth 2.0 standard. For
 
     Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
     
-AskFast(String url, String accountID, String refreshToken)
- outBoundCall( “fromAddress”, “senderName”, “toAddress”, “url” ) 
-Performs a similar outbound call like #7, but for all text based outBoundCalls (E.g. Email, SMS, XMPP etc) will identify the sender by the senderName. 
- outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” ) 
-This initiates a broadcast call to all the addresses in the Collection.
- outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” ) 
-This initiates a broadcast call to all the addresses in the Collection.
- outBoundCall( “fromAddress”, “senderName”, Map<“toAddress”, fMap<“ccAddress”, “ccName”>, Map<“bccAddress”, “bccName”>, “url” ) 
-This is usually used exclusively for email broadcast. Special parameters for ccAddress and bccAddress allows corresponding functionalities. 
- render() or finish()
-Method used to return the question thus formed in a JSON format.
+    AskFast(String url, String accountID, String refreshToken)
+ 
+- outBoundCall( “fromAddress”, “senderName”, “toAddress”, “url” ) 
+
+    Performs a similar outbound call like #7, but for all text based outBoundCalls (E.g. Email, SMS, XMPP etc) will identify the sender by the senderName. 
+
+- outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” ) 
+    
+    This initiates a broadcast call to all the addresses in the Collection.
+    
+- outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” ) 
+
+    This initiates a broadcast call to all the addresses in the Collection.
+    
+- outBoundCall( “fromAddress”, “senderName”, Map<“toAddress”, fMap<“ccAddress”, “ccName”>, Map<“bccAddress”, “bccName”>, “url” ) 
+
+    This is usually used exclusively for email broadcast. Special parameters for ccAddress and bccAddress allows corresponding functionalities. 
+    
+- render() or finish()
+
+    Method used to return the question thus formed in a JSON format.
 
 ## To ease outBoundCall requests, make use of the outBoundCall() method in the ASK-Fast API.
 outBoundCall( “adapterID”, “address”, “url” ) throws Exception
