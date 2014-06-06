@@ -463,23 +463,25 @@ The general format of a Question JSON looks like:
 
 [Java library](https://github.com/askfast/askfast-api-java)
 
-##### The following are the methods used in general to create a dialog of questions and answers. 
-ask(“Question text”, nextURL)
-QuestionType: OPEN
+This a library to make it easy to build and send  dialog senario's.
+Here is a short description of basic fuctions. An example can be found in the GitHub.
 
-##### Method used to ask a question. By default this function creates an OPEN question i.e open to user input. 
+##### The following are the methods used in general to create a dialog of questions and answers. 
+- ask(“Question text”, nextURL)
+
+    QuestionType: OPEN
+
+    Method used to ask a question. By default this function creates an OPEN question i.e open to user input. 
 
 - askByVoice(“Question text”, nextURL)
 
     QuestionType: OPENAUDIO
-        
-
-##### Method used to ask a open audio question. 
+    Method used to ask a open audio question. 
+    
 - redirect(“to”, “redirectText”, “next”)
 
     QuestionType: REFERRAL
-
-#### Method used to ask a open audio question. 
+    Method used to ask a open audio question. 
 
 - addAnswer(“Answer text”, “nextURL”)
 
@@ -496,16 +498,18 @@ QuestionType: OPEN
     say(“Response text”, “nextURL”)
     
     QuestionType: COMMENT
-    
-    
-Method used to respond to a particular answer from the user. The nextURL is added as an answer to the question.
+    Method used to respond to a particular answer from the user. The nextURL is added as an answer to the question.
 
 ## Initiating outbound communication requests:
-Any outBound communication request works on the basis of oAuth 2.0 standard. For this to work, the following conditions must be met:
-The instance variable of AskFast must be created with accountID and refreshToken. E.g: AskFast askfast = new AskFast(<url>, <accountID>, <refreshToken>, <params>);
-Call the obtainAccessToken() method. This method will obtain the AccessToken from our keyserver.
- outBoundCall( “fromAddress”, “toAddress”, “url” )
-Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
+
+    Any outBound communication request works on the basis of oAuth 2.0 standard. For this to work, the following conditions must be met:
+    The instance variable of AskFast must be created with accountID and refreshToken. E.g: AskFast askfast = new AskFast(<url>, <accountID>, <refreshToken>, <params>);
+    Call the obtainAccessToken() method. This method will obtain the AccessToken from our keyserver.
+    
+- outBoundCall( “fromAddress”, “toAddress”, “url” )
+
+    Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
+    
 AskFast(String url, String accountID, String refreshToken)
  outBoundCall( “fromAddress”, “senderName”, “toAddress”, “url” ) 
 Performs a similar outbound call like #7, but for all text based outBoundCalls (E.g. Email, SMS, XMPP etc) will identify the sender by the senderName. 
