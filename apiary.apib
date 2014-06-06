@@ -463,30 +463,34 @@ The general format of a Question JSON looks like:
 
 [Java library](https://github.com/askfast/askfast-api-java)
 
-#### The following are the methods used in general to create a dialog of questions and answers. 
+##### The following are the methods used in general to create a dialog of questions and answers. 
 ask(“Question text”, nextURL)
 QuestionType: OPEN
 
-#### Method used to ask a question. By default this function creates an OPEN question i.e open to user input. 
+##### Method used to ask a question. By default this function creates an OPEN question i.e open to user input. 
 
 - askByVoice(“Question text”, nextURL)
 
     QuestionType: OPENAUDIO
         
 
-#### Method used to ask a open audio question. 
+##### Method used to ask a open audio question. 
 - redirect(“to”, “redirectText”, “next”)
     QuestionType: REFERRAL
 
-Method used to ask a open audio question. 
-addAnswer(“Answer text”, “nextURL”)
-QuestionType: CLOSED
-Sets question type as CLOSED and then adds an answer to an existing question. 
-say(“Response text”)
-QuestionType: COMMENT
-Sets the question type as COMMENT, method used to respond to a particular answer from the user.
-say(“Response text”, “nextURL”)
-QuestionType: COMMENT
+#### Method used to ask a open audio question. 
+
+- addAnswer(“Answer text”, “nextURL”)
+
+    QuestionType: CLOSED
+    Sets question type as CLOSED and then adds an answer to an existing question. 
+    say(“Response text”)
+    QuestionType: COMMENT
+    Sets the question type as COMMENT, method used to respond to a particular answer from the user.
+    say(“Response text”, “nextURL”)
+    QuestionType: COMMENT
+    
+    
 Method used to respond to a particular answer from the user. The nextURL is added as an answer to the question.
 
 ## Initiating outbound communication requests:
