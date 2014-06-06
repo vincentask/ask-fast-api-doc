@@ -476,6 +476,7 @@ QuestionType: OPEN
 
 ##### Method used to ask a open audio question. 
 - redirect(“to”, “redirectText”, “next”)
+
     QuestionType: REFERRAL
 
 #### Method used to ask a open audio question. 
@@ -483,11 +484,17 @@ QuestionType: OPEN
 - addAnswer(“Answer text”, “nextURL”)
 
     QuestionType: CLOSED
+    
     Sets question type as CLOSED and then adds an answer to an existing question. 
+    
     say(“Response text”)
+    
     QuestionType: COMMENT
+    
     Sets the question type as COMMENT, method used to respond to a particular answer from the user.
+    
     say(“Response text”, “nextURL”)
+    
     QuestionType: COMMENT
     
     
