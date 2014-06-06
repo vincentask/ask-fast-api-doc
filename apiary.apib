@@ -386,7 +386,7 @@ The general format of a Question JSON looks like:
 |field                      |value|
 |----                       |----|
 |`TIMEOUT`                  |(Specific to a phone call) Defines the timeout associated with the call. Default value of “10s” is used for a no answer input on a closed question. “40s” is used for a call timeout for a redirection (referral question). “5s” is used for a a no answer input on an open question.|
-|`ANSWER_INPUT`             | (EXPERIMENTAL!! Not specific to any channel) Defines if the answer is given via dtmf, text etc. Default value depends on the channel used. For a phonecall “dtmf” is used as standard and “text” is used for other text based channels such as SMS, EMAIL etc.|
+|`ANSWER_INPUT`             |(EXPERIMENTAL!! Not specific to any channel) Defines if the answer is given via dtmf, text etc. Default value depends on the channel used. For a phonecall “dtmf” is used as standard and “text” is used for other text based channels such as SMS, EMAIL etc.|
 |`ANSWER_INPUT_MIN_LENGTH`  |(Specific to Phonecall) Defines the length of the answer input. Typically used with dtmf input.|
 |`ANSWER_INPUT_MAX_LENGTH`  |(Specific to Phonecall) Defines the length of the answer input. Typically used with dtmf input.|
 |`TYPE`                     |Defines a subtype for the question type. E.g. open question with type: audio refers to voicemail. By default a minimum value of “1” and unbounded maximum value is taken.|
