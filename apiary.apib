@@ -296,8 +296,8 @@ To send a message you need to specify the adapter, this messages retrieves all t
 
 #group dialog senario
 
-a Dialog-Scenario consists of Questions. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. 
-In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions. 
+a Dialog-Scenario consists of Questions and answers hosted on a specific question url. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. 
+In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions, see below. 
 Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
 
 The flow is as follows:
@@ -497,7 +497,7 @@ The general format of a Question JSON looks like:
 
 ## email
 
-# group java api
+# group java library
 
 [Java library](https://github.com/askfast/askfast-api-java)
 
@@ -578,7 +578,7 @@ Any outBound communication request works on the basis of oAuth 2.0 standard. For
     Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
     `AskFast(String baseHostURL, String accountID, String refreshToken)`
 
-# group PHP api
+# group PHP library
 
 [PHP library] (https://github.com/askfast/askfast-api-php)
 
