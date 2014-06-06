@@ -504,8 +504,8 @@ Here is a short description of basic fuctions. An example can be found in the Gi
 
 Any outBound communication request works on the basis of oAuth 2.0 standard. For this to work, the following conditions must be met:
 
-- The instance variable of AskFast must be created with accountID and refreshToken. E.g: AskFast askfast = new AskFast(<url>, <accountID>, <refreshToken>, <params>);
-- Call the obtainAccessToken() method. This method will obtain the AccessToken from our keyserver.
+1. The instance variable of AskFast must be created with accountID and refreshToken. E.g: AskFast askfast = new AskFast(<url>, <accountID>, <refreshToken>, <params>);
+2. Call the obtainAccessToken() method. This method will obtain the AccessToken from our keyserver.
     
 - outBoundCall( “fromAddress”, “toAddress”, “url” )
 
