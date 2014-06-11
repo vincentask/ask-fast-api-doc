@@ -156,6 +156,8 @@ Set these fields manualy when trying the example on the right
 ## acount info [/info]
 ### get acount info [GET]
 
+#### */info*
+
 ## header fields
 
 |field|value|
@@ -188,6 +190,8 @@ Set these fields manualy when trying the example on the right
 ## get Keys [/key]
 ### get key [GET]
 
+#### */key*
+
 ## header fields
 
 |field|value|
@@ -215,6 +219,8 @@ Set these fields manualy when trying the example on the right
 ## delete key [/key/{token}]
 ### delete key [DELETE]
 
+#### */key/{token}*
+
 + Parameters
     + token (required, String , `xxxxx`)... String `token` of the key.
 
@@ -227,6 +233,8 @@ Set these fields manualy when trying the example on the right
 ## adapters [/adapter]
 
 ### Get Ask Fast adapters [GET]
+
+#### */adapter*
 
 To send a message you need to specify the adapter, this messages retrieves all the adapters
 
@@ -278,6 +286,8 @@ To send a message you need to specify the adapter, this messages retrieves all t
 
 
 ### update inbound agent url [PUT]
+
+#### */adapter*
 
 #### header fields
 
@@ -406,6 +416,8 @@ The general format of a Question JSON looks like:
 
 ### initiate dialog [POST]
 
+#### */dialog*
+
 #### header fields
 
 |field|value|
@@ -446,6 +458,8 @@ The general format of a Question JSON looks like:
 For testing purposes it is postible to send test messages via this method.
 
 ### test message with map [POST]
+
+#### */dialoghandler/rpc*
 
 #### header fields
 
@@ -502,6 +516,8 @@ For testing purposes it is postible to send test messages via this method.
         hallo
 
 ### test inbound message [POST]
+
+#### */dialoghandler/rpc*
 
 #### header fields
 
