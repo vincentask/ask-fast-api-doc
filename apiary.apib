@@ -370,32 +370,7 @@ The general format of a Question JSON looks like:
            
 ```
 
-```php
 
-        <?php
-        $ch = curl_init();
-        
-        curl_setopt($ch, CURLOPT_URL, "http://private-dd608b-askfast.apiary-proxy.com/dialog");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, FALSE);
-        
-        curl_setopt($ch, CURLOPT_POST, TRUE);
-        
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "{
-          \"name\": \"My First Dialog\",
-          \"url\": \"http://test.me\"
-        }");
-        
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-          "Authorization: Bearer xxxxxxxxxxxxxxxxxxxx",
-          "Content-Type: application/json"
-        ));
-        
-        $response = curl_exec($ch);
-        curl_close($ch);
-        
-        var_dump($response);
-```
 
 #### parameter specification:
 
