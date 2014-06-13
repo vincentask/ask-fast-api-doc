@@ -229,6 +229,10 @@ Set these fields manualy when trying the example on the right
             hallo
         }
 
+# group adapter
+
+
+
 ## adapters [/adapter]
 
 ### Get Ask Fast adapters [GET]
@@ -331,21 +335,21 @@ Use of this library frees the developer from knowing how the Question should be 
 
 The outbound dialog flow is as follows:
 
-1. set up a dialog format and a callback url
+    1. set up a dialog format and a callback url
 
-2. initiate the dialog see `initiate dialog`
+    2. initiate the dialog see `initiate dialog`
 
-3. Send the first message see `start a dialog`
-
-3. user responds
-
-4. Answer is fetched
-
-5. process the answer
-
-6. respond with the next question form `callback` url
-
-7. start again from point 3
+    3. Send the first message see `start a dialog`
+    
+    3. user responds
+    
+    4. Answer is fetched
+    
+    5. process the answer
+    
+    6. respond with the next question form `callback` url
+    
+    7. start again from point 3
 
 
 The inbound dialog flow:
