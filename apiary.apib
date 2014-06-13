@@ -467,15 +467,16 @@ The general format of a Question JSON looks like:
 + response 200
 
         {
-            id: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            id: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             name: "My First Dialog"
             url: http://test.me
-            owner: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            owner: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            readableCreationTime: "6/13/14 9:41 AM"
         }
 
 ## start a dialog [/dialoghandler/rpc]
 
-For testing purposes it is postible to send test messages via this method.
+To start a dialog which you have initialiesed with the previous call you can use this method. 
 
 ### send message [POST]
 
