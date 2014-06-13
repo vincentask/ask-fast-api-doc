@@ -424,6 +424,15 @@ The general format of a Question JSON looks like:
 |`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
 |`Content-Type`|`application/json`|
 
+
+#### fields
+
+|field|value| description |
+|----|----| --- |
+|`name`|`your name`| you can make up your own name for the dialog |
+|`url`|`your url`| This is the url of your first question |
+
+
 #### post body
 
         {
@@ -463,11 +472,11 @@ The general format of a Question JSON looks like:
             owner: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         }
 
-## test send message [/dialoghandler/rpc]
+## start a dialog [/dialoghandler/rpc]
 
 For testing purposes it is postible to send test messages via this method.
 
-### test message with map [POST]
+### send message [POST]
 
 #### */dialoghandler/rpc*
 
