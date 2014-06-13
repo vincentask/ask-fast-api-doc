@@ -341,7 +341,7 @@ The outbound dialog flow is as follows:
 
 4. Answer is fetched
 
-5. process the awnser
+5. process the answer
 
 6. respond with the next question form `callback` url
 
@@ -358,13 +358,13 @@ The inbound dialog flow:
 
 4. Answer is fetched
 
-5. process the awnser
+5. process the answer
 
 6. respond with the next question form `callback` url
 
 7. next question is asked
 
-8. user awnsers
+8. user answers
 
 9. starts from point 5
 
@@ -414,7 +414,7 @@ The general format of a Question JSON looks like:
 |`type`|string|open anwser can be anything; closed e.g YES or NO; comment ; refferal;|
 |`url`|string|url of the type??|
 |`answer_id`|string| some chosen id|
-|`callback`|string| this url will be call when a person awnsers, here the next question will be called|
+|`callback`|string| this url will be call when a person answers, here the next question will be called|
 |`medium`|string| medium type to send the question with|
 
 #### optional propperties defined in the MediumPropertyKey key
