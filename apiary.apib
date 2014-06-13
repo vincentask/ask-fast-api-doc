@@ -329,11 +329,13 @@ a Dialog-Scenario consists of Questions and answers hosted on a specific questio
 In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions, see *java library* and *PHP library*. 
 Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
 
-The dialog flow is as follows:
+The outbound dialog flow is as follows:
 
 1. set up a dialog format and a callback url
 
 2. initiate the dialog see `initiate dialog`
+
+3. Send the first message see `start a dialog`
 
 3. user responds
 
@@ -341,9 +343,30 @@ The dialog flow is as follows:
 
 5. process the awnser
 
-6. respond with the next question form `callback`
+6. respond with the next question form `callback` url
 
 7. start again from point 3
+
+
+The inbound dialog flow:
+
+1. set up a dialog format and a callback url
+
+2. initiate the dialog see `initiate dialog`
+
+3. user call/sms/email the adress of the adapter
+
+4. Answer is fetched
+
+5. process the awnser
+
+6. respond with the next question form `callback` url
+
+7. next question is asked
+
+8. user awnsers
+
+9. starts from point 5
 
 
 The general format of a Question JSON looks like:
