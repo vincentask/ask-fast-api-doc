@@ -250,6 +250,12 @@ an adapter is used to tell the system which channel to use for comunication. The
             dialogId: null
         }
 
+|field|value|
+|----|----|
+|`ConfigId`|the Id of the adapter, when sending a message this is the `adapterID` field|
+|`adapterType`|Type of the adapter push|ussd|sms|emai|broadsoft| |
+
+
 ## adapters [/adapter]
 
 the ask fast system uses adapters to link adresses (email, sms, etc) to accounts. So before you can send a question over a certain medium you need an adapter for that medium. These adapter can be created in the [developer center](http://portal.ask-fast.com).
