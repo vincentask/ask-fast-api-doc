@@ -236,7 +236,19 @@ Set these fields manualy when trying the example on the right
 
 # group adapter
 
-
+### an adapter is used to tell the system which channel to use for comunication. The geral layout of a adapter is:
+        
+        {
+            configId: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            adapterType: "ussd",
+            address: "",
+            myAddress: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            keyword: null,
+            initialAgentURL: "",
+            anonymous: false,
+            preferred_language: "nl",
+            dialogId: null
+        }
 
 ## adapters [/adapter]
 
