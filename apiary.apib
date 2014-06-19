@@ -586,8 +586,14 @@ To start a dialog which you have initialiesed with the previous call you can use
 
 + response 200 
 
-        hallo
-
+        {
+                jsonrpc: "2.0"
+                id: "xxxxxxxxxxxxx"
+            - result: {
+                    xxxxxx: "push|xxxxxxxx|xxxxxxxxxx"
+                }
+        }
+        
 ### test inbound message [POST]
 
 #### */dialoghandler/rpc*
