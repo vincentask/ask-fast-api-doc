@@ -3,10 +3,10 @@ HOST: http://api.ask-fast.com
 
 # Ask Fast
 <br>
-### this document is a work in progress
+### This document is a work in progress
 <br>
 
-#### api end point: http://api.ask-fast.com
+#### Api end point: http://api.ask-fast.com
 
 Ask Fast offers an API framework that can create dialogs various media type e.g. SMS, xmpp, email, twitter, voice and ussd. 
 This enables developers to easily start a two way communication with their customers, without having to write separate code for every communication channel.
@@ -20,37 +20,37 @@ The first part is the pure Ask Fast API, this allows you (the developer) to host
 
 The second makes is the Ask fast Marketplace. Here we do everything for you, so you do not have to worry about the server side. You can focus on what you do best creating great apps. Make your choose and get started!
 
-## libraries
+## Libraries
 
 Library support is currently restricted to Java and PHP, if you have build your own library please let us know at: support@ask-fast.com . You can download the libraries from here, the manuals are in this document:
 
 - [Java library](https://github.com/askfast/askfast-api-java)
 - [PHP library] (https://github.com/askfast/askfast-api-php)
 
-###### work in progress
+###### Work in progress
 
 - [NodeJs](https://github.com/askfast/askfast-api-node)
 
 Api documentation for each labrary can be found on the github and bellow
 
-## authentication
+## Authentication
 
 For authentication the Ask Fast API uses a unique token this token can be requierd with an oAuth request as descriped in the login section. To make sure the connection is save all calls have to be via a HTTPS connections regualar HTTP will fail.
 
-## error handling
+## Error handling
 
 Ask Fast Api uses regular HTTP response codes to indicate suesses or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an errer form the user side, this could be an invalid request or a not authorised (401).
 
 Overview of HTTP response codes:
 
-- 200 → everything whent smoothly.
+- 200 → Everything whent smoothly,
 - 400 → Bad request maybe a parameter is missing?
-- 401 → Not authorised, the autosisation faild.
+- 401 → Not authorised, the authorisation failed.
 - 404 → Request not found.
-- 5xx → internal server error, we try to make the error logs easy to read for you.
+- 5xx → Internal server error, we try to make the error logs easy to read for you.
 
 
-## dates
+## Dates
 
 All dates are standard UNIX (epoch) coded. This represents the seconds passed since 01-01-1970. Some examples:
 
@@ -65,7 +65,7 @@ At the moment the pagination limitations is a 1000 responses per call. If you wi
 ## Rate limiting
 The Ask Fast Api uses a fair use policy, when you do not abuse the system you do not have a rate limiting
 
-## language codes
+## Language codes
 
 If you want to make a call and use Text To Speech (TTS) you can use the following language codes
 
@@ -100,14 +100,14 @@ If you want to make a call and use Text To Speech (TTS) you can use the followin
 
 
 
-#group account
+#group Account
 
 You can use the Ask Fast API, to directly talk to our servers to send messages. To send a questions this questions have to be hosted on your own server. This can be an easy mysql database or any other form of you liking.
 If you do not want to host this your self you can use our Marketplace.
 
-## login [/keyserver/token]
+## Login [/keyserver/token]
 
-### login to Ask Fast [POST]
+### Login to Ask Fast [POST]
 
 #### */keyserver/token*
 
@@ -157,8 +157,8 @@ Set these fields manualy when trying the example on the right
             "error_description":"xxxxxxxxxxxxxx"
         }
 
-## acount info [/info]
-### get acount info [GET]
+## Acount info [/info]
+### Get acount info [GET]
 
 #### */info*
 
@@ -191,8 +191,8 @@ Set these fields manualy when trying the example on the right
             status: "ACTIVE"
         }
 
-## get Keys [/key]
-### get key [GET]
+## Get Keys [/key]
+### Get key [GET]
 
 #### */key*
 
@@ -220,8 +220,8 @@ Set these fields manualy when trying the example on the right
         }
 
         
-## delete key [/key/{token}]
-### delete key [DELETE]
+## Delete key [/key/{token}]
+### Delete key [DELETE]
 
 #### */key/{token}*
 
@@ -234,9 +234,9 @@ Set these fields manualy when trying the example on the right
             
         }
 
-# group adapter
+# group Adapter
 
-an adapter is used to tell the system which channel to use for comunication. The geral layout of a adapter is:
+An adapter is used to tell the system which channel to use for comunication. The geral layout of a adapter is:
         
         {
             configId: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -258,7 +258,7 @@ an adapter is used to tell the system which channel to use for comunication. The
 
 
 
-## adapters [/adapter]
+## Adapters [/adapter]
 
 the ask fast system uses adapters to link adresses (email, sms, etc) to accounts. So before you can send a question over a certain medium you need an adapter for that medium. These adapter can be created in the [developer center](http://portal.ask-fast.com).
 
@@ -315,7 +315,7 @@ To send a message you need to specify the adapter, this messages retrieves all t
 
 
 
-### update inbound agent url [PUT]
+### Update inbound agent url [PUT]
 
 #### */adapter*
 
@@ -354,7 +354,7 @@ To send a message you need to specify the adapter, this messages retrieves all t
             anonymous: false
         }
 
-#group dialog senario
+#group Dialog senario
 
 a Dialog-Scenario consists of Questions and answers hosted on a specific question url. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. 
 In Order to facilitate ease of development, we have implemented an open-source library  to prepare questions, see *java library* and *PHP library*. 
@@ -465,9 +465,9 @@ Use of this library frees the developer from knowing how the Question should be 
 |`TSS_SPEED`                |(Specific to phonecall) Defines the speed at which the TTS is spoken by the TTS engine. Default value: “0”. Range: [-10, 10] where -10 is the slowest and 10|
 
 
-## initiate dialog [/dialog]
+## Initiate dialog [/dialog]
 
-### initiate dialog [POST]
+### Initiate dialog [POST]
 
 #### */dialog*
 
@@ -528,11 +528,11 @@ Use of this library frees the developer from knowing how the Question should be 
             readableCreationTime: "6/13/14 9:41 AM"
         }
 
-## start a dialog [/dialoghandler/rpc]
+## Start a dialog [/dialoghandler/rpc]
 
 To start a dialog which you have initialiesed with the previous call you can use this method. 
 
-### send message [POST]
+### Send message [POST]
 
 #### */dialoghandler/rpc*
 
@@ -644,7 +644,7 @@ To start a dialog which you have initialiesed with the previous call you can use
 
 
 
-# group java library
+# group Java library
 
 [Java library](https://github.com/askfast/askfast-api-java)
 
@@ -726,14 +726,14 @@ Any outBound communication request works on the basis of oAuth 2.0 standard. For
     `AskFast(String baseHostURL, String accountID, String refreshToken)`
 
 
-#group support
+#group Support
 
 For support you can check [Stackoverflow](http://stackoverflow.com/questions/tagged/ask-fast) with the tag ["ask-fast"](http://stackoverflow.com/questions/tagged/ask-fast) or the tag ["ask-fast-marketplace"]( http://stackoverflow.com/questions/tagged/ask-fast-marketplace)
 If it is not there you can post questions with these tags.
 
 If you realy want to speak to us please email us at: support@ask-fast.com
 
-# group developer portal
+# group Developer portal
 
 #### click <a href="http://dev.ask-fast.com" target="_blank"> here </a> to go to the developer portal
 
