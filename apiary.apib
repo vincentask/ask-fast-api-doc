@@ -9,20 +9,20 @@ HOST: http://api.ask-fast.com
 #### Api end point: http://api.ask-fast.com
 
 Ask Fast offers an API framework that can create dialogs for various media types e.g. SMS, xmpp, email, twitter, voice and ussd. 
-This enables developers to easily start a two way communication dialog with their customers, without having to write separate code for every communication channel.
-With two way communication we really mean two way, so this also allows your customers to start a dialog with you; not just the other way around.
+This enables developers to easily start a two way communication dialog with their customers without having to write a separate code for every communication channel.
+With two way communication we really mean two way; it also allows your customers to start a dialog with you, not just the other way around.
 
 The API uses web standard formats like JSON and REST standards to make developing as easy as possible. 
 
-The API is split up into two parts 1. Ask fast api and 2. the market place API which can be found [here](http://docs.askfastmarketplace.apiary.io/)
+The API is split up into two parts: 1. Ask Fast API 2. the market place API which can be found [here](http://docs.askfastmarketplace.apiary.io/)
 
-The first part is the pure Ask Fast API, this allows you (the developer) to host your own questions and answers. This requires your own server and server sided code. This allows a lot of customization.
+The first part is the Ask Fast API, this allows you (the developer) to host your own questions and answers. This requires your own server and server sided code. This allows a lot of customization.
 
-The second part is the Ask fast Marketplace. Here we do everything for you, so you do not have to worry about the server side. You can focus on what you do best: creating great apps. Make your choice and get started!
+The second part is the Ask Fast Marketplace. Here we do everything for you so you don't have to worry about the server side. You can focus on what you do best: creating great apps. Make your choice and get started!
 
 ## Libraries
 
-Library support is currently restricted to Java and PHP, if you have built your own library please let us know at: support@ask-fast.com . You can download the libraries from here, the manuals are in this document:
+Library support is currently restricted to Java and PHP, so if you have built your own library please let us know at: support@ask-fast.com . You can download the libraries from here, the manuals are in this document:
 
 - [Java library](https://github.com/askfast/askfast-api-java)
 - [PHP library] (https://github.com/askfast/askfast-api-php)
@@ -31,23 +31,23 @@ Library support is currently restricted to Java and PHP, if you have built your 
 
 - [NodeJs](https://github.com/askfast/askfast-api-node)
 
-Api documentation for each library can be found on the github and below
+API documentation for each library can be found on the github and below
 
 ## Authentication
 
-For authentication the Ask Fast API uses a unique token. This token can be required with an oAuth request as described in the login section. To make sure the connection is saved, all calls have to be via a HTTPS connections. Regular HTTP will fail.
+For authentication, the Ask Fast API uses a unique token. This token can be required with an oAuth request as described in the login section. To make sure the connection is saved, all calls have to be via HTTPS connections. Regular HTTP will fail.
 
 ## Error handling
 
-Ask Fast Api uses regular HTTP response codes to indicate success or fail of the API request. A 200 response indicates a succesfull request. The 4xx response often means an error from the user side, this could be an invalid or not authorised request(401).
+Ask Fast API uses regular HTTP response codes to indicate success or failure of the API request. A 200 response indicates a succesfull request. The 4xx response often means an error from the user side, this could be an invalid or not authorised request(401).
 
 Overview of HTTP response codes:
 
-- 200 → Everything whent smoothly,
+- 200 → Everything went smoothly,
 - 400 → Bad request maybe a parameter is missing?
 - 401 → Not authorised, the authorisation failed.
 - 404 → Request not found.
-- 5xx → Internal server error, we try to make the error logs easy to read for you.
+- 5xx → Internal server error, we try to make the error logs easy for you to read.
 
 
 ## Dates
@@ -63,7 +63,7 @@ All dates are standard UNIX (epoch) coded. This represents the seconds passed si
 At the moment the pagination limitations is a 1000 responses per call. If you wish to go back even further you can change the date attribute to fetch the results for a certain period.  
 
 ## Rate limiting
-The Ask Fast Api uses a fair use policy, when you do not abuse the system you do not have a rate limiting
+The Ask Fast API uses a fair use policy: If you don't abuse the system you don't have a rate limit.
 
 ## Language codes
 
@@ -79,7 +79,7 @@ If you want to make a call and use Text To Speech (TTS) you can use the followin
 |nl-nl|Dutch|
 |en-au|English (Australia)|
 |en-ca|English (Canada)|
-|en-gb|nglish (Great Britain)|
+|en-gb|English (Great Britain)|
 |en-in|English (India)|
 |en-us|English (United States)|
 |fi-fi|Finnish|
@@ -103,7 +103,7 @@ If you want to make a call and use Text To Speech (TTS) you can use the followin
 #group Account
 
 You can use the Ask Fast API to directly talk to our servers to send messages. Questions have to be hosted on your own server. This can be an easy mysql database or any other form of your liking.
-If you do not want to host this yourself you can use our Marketplace.
+If you don't want to host this yourself you can use our Marketplace.
 
 ## Login [/keyserver/token]
 
@@ -111,10 +111,10 @@ If you do not want to host this yourself you can use our Marketplace.
 
 #### */keyserver/token*
 
-Ask fast api does not use a login, the servers expect an authorization token for every request. 
+Ask Fast API does not use a login, the servers expect an authorization token for every request. 
 This token can be fetched with this request.
 
-Set these fields manualy when trying the example on the right
+Set these fields manualy when trying the example on the right:
 
 
 #### header fields
@@ -260,13 +260,13 @@ An adapter is used to tell the system which channel to use for communication. Th
 
 ## Adapters [/adapter]
 
-the ask fast system uses adapters to link addresses (email, sms, etc) to accounts. So before you can send a question over a certain medium you need an adapter for that medium. These adapters can be created in the [developer center](http://portal.ask-fast.com).
+The Ask Fast system uses adapters to link addresses (email, sms, etc) to accounts. So before you can send a question through a certain medium you need an adapter for that medium. These adapters can be created in the [developer center](http://portal.ask-fast.com).
 
 ### Get Ask Fast adapters [GET]
 
 #### */adapter*
 
-To send a message you need to specify the adapter, this messages retrieves all the adapters
+To send a message you need to specify the adapter, this messages retrieves all the adapters.
 
 ## header fields
 
@@ -356,9 +356,9 @@ To send a message you need to specify the adapter, this messages retrieves all t
 
 #group Dialog senario
 
-a Dialog-Scenario consists of Questions and answers hosted on a specific question url. These Question URLs must be accessible to the ASK-Fast Server. As response, these Questions can be sent as static string. 
-In Order to facilitate ease of development, we have implemented an open-source library to prepare questions, see *java library* and *PHP library*. 
-Use of this library frees the developer from knowing how the Question should be formatted and also keeps it flexible to any changes in the Question format in the future. 
+A Dialog-Scenario consists of questions and answers hosted on a specific question url. These question URLs must be accessible to the ASK-Fast Server. As response, these questions can be sent as static string. 
+In order to facilitate ease of development, we have implemented an open-source library to prepare questions, see *java library* and *PHP library*. 
+Use of this library makes sure the developer does not have to know how the question should be formatted and also keeps it flexible to any changes in the question format in the future. 
 
 #### The outbound dialog flow is as follows:
 
@@ -443,24 +443,24 @@ Use of this library frees the developer from knowing how the Question should be 
 | ------------- |:---------:| -----|
 | `question_id`    | string    | can be any chosen id|
 |`type`|string|open anwser can be anything; closed e.g YES or NO; comment ; refferal;|
-|`url`|string|url of the type??|
+|`url`|string|url of the type|
 |`answer_id`|string| some chosen id|
-|`callback`|string| this url will be call when a person answers, here the next question will be called|
-|`medium`|string| medium type to send the question with|
+|`callback`|string| this url will be called when a person answers, here the next question will be called|
+|`medium`|string| medium type used to send the question|
 
 #### optional propperties defined in the MediumPropertyKey key
 
 
 |field                      |value|
 |----                       |----|
-|`TIMEOUT`                  |(Specific to a phone call) Defines the timeout associated with the call. Default value of “10s” is used for a no answer input on a closed question. “40s” is used for a call timeout for a redirection (referral question). “5s” is used for a a no answer input on an open question.|
+|`TIMEOUT`                  |(Specific to a phone call) Defines the timeout associated with the call. Default value of “10s” is used for a no answer input on a closed question. “40s” is used for a call timeout for a redirection (referral question). “5s” is used for a no answer input on an open question.|
 |`ANSWER_INPUT`             |(EXPERIMENTAL!! Not specific to any channel) Defines if the answer is given via dtmf, text etc. Default value depends on the channel used. For a phonecall “dtmf” is used as standard and “text” is used for other text based channels such as SMS, EMAIL etc.|
 |`ANSWER_INPUT_MIN_LENGTH`  |(Specific to Phonecall) Defines the length of the answer input. Typically used with dtmf input.|
 |`ANSWER_INPUT_MAX_LENGTH`  |(Specific to Phonecall) Defines the length of the answer input. Typically used with dtmf input.|
 |`TYPE`                     |Defines a subtype for the question type. E.g. open question with type: audio refers to voicemail. By default a minimum value of “1” and unbounded maximum value is taken.|
 |`VOICE_MESSAGE_LENGTH`     |(Specific to phonecall) Defines the length of the voicemail to be recorded. By default “15s” is used to as the length of the voice message.|
 |`RETRY_LIMIT`              |(Currently specific to phonecall) Defines the number of times the question should repeat in case of a wrong answer input. Works only for phonecalls so as to end a call with repeated input errors. Default value of “5” is used.|
-|`VOICE_MESSAGE_BEEP`       |(Specific to phonecall) Boolean flag to indicate if a voice mssage start should be indicated by a beep or not. Default value is “true”.|
+|`VOICE_MESSAGE_BEEP`       |(Specific to phonecall) Boolean flag to indicate if a voice message start should be indicated by a beep or not. Default value is “true”.|
 |`DTMF_TERMINATE`           |(Specific to phonecall) Boolean flag to indicate if the call should terminate when a dtmf is pressed. Default value is “true”.|
 |`TSS_SPEED`                |(Specific to phonecall) Defines the speed at which the TTS is spoken by the TTS engine. Default value: “0”. Range: [-10, 10] where -10 is the slowest and 10|
 
@@ -493,7 +493,7 @@ Use of this library frees the developer from knowing how the Question should be 
 |field|value| description |
 |----|----| --- |
 |`name`|`your name`| you can make up your own name for the dialog |
-|`url`|`your url`| This is the url of your first question |
+|`url`|`your url`| this is the url of your first question |
 
 #### response body:
 
@@ -530,7 +530,7 @@ Use of this library frees the developer from knowing how the Question should be 
 
 ## Start a dialog [/dialoghandler/rpc]
 
-To start a dialog which you have initialiesed with the previous call you can use this method. 
+To start a dialog that you have initialized with the previous call you can use this method. 
 
 ### Send message [POST]
 
@@ -648,10 +648,10 @@ To start a dialog which you have initialiesed with the previous call you can use
 
 [Java library](https://github.com/askfast/askfast-api-java)
 
-This a library to make it easy to build and send  dialog senario's.
+This is a library to make it easy to build and send dialog senario's.
 Here is a short description of basic fuctions. An example can be found in the GitHub.
 
-##### The following are the methods used in general to create a dialog of questions and answers. 
+##### These are the methods used in general to create a dialog of questions and answers. 
 - `ask(“Question text”, nextURL)`
 
     QuestionType: OPEN
@@ -661,12 +661,12 @@ Here is a short description of basic fuctions. An example can be found in the Gi
 - `askByVoice(“Question text”, nextURL)`
 
     QuestionType: OPENAUDIO
-    Method used to ask a open audio question. 
+    Method used to ask an open audio question. 
     
 - `redirect(“to”, “redirectText”, “next”)`
 
     QuestionType: REFERRAL
-    Method used to ask a open audio question. 
+    Method used to ask an open audio question. 
 
 - `addAnswer(“Answer text”, “nextURL”)`
 
@@ -687,20 +687,20 @@ Here is a short description of basic fuctions. An example can be found in the Gi
 
 #### Initiating outbound communication requests:
 
-Any outBound communication request works on the basis of oAuth 2.0 standard. For this to work, the following conditions must be met:
+Any outbound communication request works on the basis of oAuth 2.0 standard. For this to work, the following conditions must be met:
 
-1. The instance variable of AskFast must be created with accountID and refreshToken. E.g: AskFast askfast = new AskFast(<url>, <accountID>, <refreshToken>, <params>);
+1. The instance variable of AskFast must be created with accountID and refreshToken. e.g: AskFast askfast = new AskFast(<url>, <accountID>, <refreshToken>, <params>);
 2. Call the obtainAccessToken() method. This method will obtain the AccessToken from our keyserver.
     
 - `outBoundCall( “fromAddress”, “toAddress”, “url” )`
 
-    Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
+    Initiates an outbound call (e.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
     
     AskFast(String url, String accountID, String refreshToken)
  
 - `outBoundCall( “fromAddress”, “senderName”, “toAddress”, “url” )` 
 
-    Performs a similar outbound call like #7, but for all text based outBoundCalls (E.g. Email, SMS, XMPP etc) will identify the sender by the senderName. 
+    Performs a similar outbound call like #7, but for all text based outBoundCalls (e.g. Email, SMS, XMPP etc) will identify the sender by the senderName. 
 
 - `outBoundCall( “fromAddress”, “senderName”, Collection<“toAddress”>, “url” )` 
     
@@ -718,11 +718,11 @@ Any outBound communication request works on the basis of oAuth 2.0 standard. For
 
     Method used to return the question thus formed in a JSON format.
 
-#### To ease outBoundCall requests, make use of the outBoundCall() method in the ASK-Fast API.
+#### To ease outBoundCall requests, use the outBoundCall() method in the ASK-Fast API.
 
 - `outBoundCall( “adapterID”, “address”, “url” ) throws Exception`
 
-    Initiates an outbound call (E.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
+    Initiates an outbound call (e.g. SMS, Phone call, XMPP message) based on the adapter keys provided while constructing the AskFast instance:
     `AskFast(String baseHostURL, String accountID, String refreshToken)`
 
 
