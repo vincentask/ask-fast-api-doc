@@ -526,7 +526,6 @@ To start a dialog that you have initialized with the previous call you can use t
 
 |field|value|
 |----|----|
-|`Authorization`|`Bearer xxxxxxxxxxxxxxxxxxxx`|
 |`Content-Type`|`application/json`|
 
 ##### body content:
@@ -541,7 +540,8 @@ To start a dialog that you have initialized with the previous call you can use t
                 "url": "<URL to fetch the Question from>",
                 "accountID": "<accountID>",
                 "senderName": "<sender Name>",
-                "subject": "<Subject>"
+                "subject": "<Subject>",
+                "bearerToken": "<bearer token generated from /keyserver/token call>"
             }
         }
 
